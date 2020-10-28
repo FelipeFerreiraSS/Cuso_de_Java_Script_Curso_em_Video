@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Guanabara</title>
+    <style>
+        body {
+            background: rgba(0, 0, 0, 0.801);
+            font: normal 12pt Arial;
+            color: white;
+        }
+        #seupais {
+            border-radius: 20pt;
+        }
+        #botao {
+            border-radius: 20pt;
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>De que país você é ?</h1>
+    Escreva o nome do seu país <input type="text" name="seupais" id="seupais">
+    <input type="button" value="Verificar" id="botao" onclick="verificar()">
+    <div id="resp">
+
+    </div>
+    
+    <script>
+        function verificar() {
+            var pais = window.document.getElementById('seupais')
+            var resp = window.document.getElementById('resp')
+            var val = (pais.value) 
+            resp.innerHTML = `<p>Seu país é ${val}, então:</p>`
+            if (val == 'Brasil') {
+                resp.innerHTML += `<p>Você é Brasileiro!</p>`
+            } else {
+                resp.innerHTML += `<p>Você é estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
